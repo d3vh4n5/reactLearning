@@ -10,16 +10,15 @@ import Usuarios from './crud_components/Usuarios';
 
 function App() {
   /*
-  */
-const [valor, setValor] = useState(0)
-const [texto, setTexto] = useState('')
-const aumentar = ()=>{
-  if (valor >= 3){ 
-    setTexto('No puedes superar el 3')
-  } else{
-    setValor(valor +1)
+  const [valor, setValor] = useState(0)
+  const [texto, setTexto] = useState('')
+  const aumentar = ()=>{
+    if (valor >= 3){ 
+      setTexto('No puedes superar el 3')
+    } else{
+      setValor(valor +1)
     setTexto('')
-
+    
   }
 }
 const disminuir = ()=>{
@@ -58,6 +57,7 @@ const datos = [
     id: 5
   },
 ]
+*/
 return (
   <div className='container'>
   <h1>Test site de React con Yarn, y bootstrap</h1>
@@ -65,11 +65,10 @@ return (
   <hr />
   <hr />
   {/*
-  */}
-  <h1>Primer componente en React</h1>
+<h1>Primer componente en React</h1>
   <Hello></Hello>
-      <Hello></Hello>
-      <Hello></Hello>
+  <Hello></Hello>
+  <Hello></Hello>
 
       <hr />
       <h1>JSX</h1>
@@ -108,11 +107,22 @@ return (
 
         <Listados datos = {datos}></Listados>
       <hr />
+    */}
     <h1>CRUD BÁSICO</h1>
     <br />
     <h3>12 Crear formulario y estructura del proyecto</h3>
     <br />
       <Usuarios></Usuarios>
+      
+
+
+
+
+
+
+
+
+      
     <h4>⚠️ aún no es funcional. Trabajo en proceso</h4>
 
     </div>
