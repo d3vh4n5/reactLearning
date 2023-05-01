@@ -18,29 +18,29 @@ function App() {
       setTexto('No puedes superar el 3')
     } else{
       setValor(valor +1)
-    setTexto('')
-    
+      setTexto('')
+      
+    }
   }
-}
-const disminuir = ()=>{
-  if (valor <= 3 && valor >0){
-    setTexto('')
-    setValor(valor -1)
-  } else if(valor <= 0){
-    setTexto('El valor no puede ser menor a 0')
+  const disminuir = ()=>{
+    if (valor <= 3 && valor >0){
+      setTexto('')
+      setValor(valor -1)
+    } else if(valor <= 0){
+      setTexto('El valor no puede ser menor a 0')
+    }
   }
-}
-
-const datos = [
-  {
-    nombre: 'Manuel',
-    edad: 37,
-    id: 1
-  },
-  {
-    nombre: 'Juan',
-    edad: 32,
-    id: 2
+  
+  const datos = [
+    {
+      nombre: 'Manuel',
+      edad: 37,
+      id: 1
+    },
+    {
+      nombre: 'Juan',
+      edad: 32,
+      id: 2
   },
   {
     nombre: 'Elena',
@@ -70,7 +70,7 @@ return (
   <Hello></Hello>
   <Hello></Hello>
   <Hello></Hello>
-
+  
       <hr />
       <h1>JSX</h1>
       <Formato></Formato>
@@ -123,7 +123,8 @@ return (
 
 
       
-    <h4>⚠️ aún no es funcional. Trabajo en proceso</h4>
+    
+    <h4>⚠️ el mismo solo funciona con la memoria temporal, al refrescar la página se resetea</h4>
 
     </div>
   );

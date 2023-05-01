@@ -7,6 +7,7 @@ const Usuarios = () => {
     const [lista, setLista] = useState([])
     const [fallo, setFallo] = useState(false)
     const [error, setError] = useState('')
+    const [modoedicion, setModoEdicion] = useState(false)
 
     const agergarUsuario = (e)=>{
         e.preventDefault()
@@ -31,6 +32,26 @@ const Usuarios = () => {
         setFallo(false)
     }
 
+    const BorrarUsuario = (nombre)=>{
+        const filtro = lista.filter(item => item.nombre !== nombre)
+        setLista(filtro)
+    }
+
+    const PrimeraEdicion = (objeto)=>{
+        setNombre(objeto.nombre)
+        setEdad(objeto.edad)
+        setModoEdicion(true)
+    }
+
+    const EdicionFinal = (e)=>{
+        e.preventDefault()
+        const editado = lista.map( item => item.nombre === nombre ? {nombre, edad} : item)
+        setLista(editado)
+        setModoEdicion(false)
+        setNombre('')
+        setEdad('')
+    }
+
   return (
     <div>
         <div className="row">
@@ -41,10 +62,10 @@ const Usuarios = () => {
                     {
                         lista.map( i=>(
                             <li className='list-group-item m-2'>
-                                <p>se llama {i.nombre} con {i.edad} años</p>
+                                <p>Se llama {i.nombre} con {i.edad} años</p>
                                 
-                                <button className='btn btn-sm btn-primary m-1 float-right'>EDITAR</button>
-                                <button className='btn btn-sm btn-primary m-1 float-right'>BORRAR</button>
+                                <button onClick={() => {PrimeraEdicion(i)}} className='btn btn-sm btn-primary m-1 float-right'>EDITAR</button>
+                                <button  onClick={()=>{BorrarUsuario(i.nombre)}} className='btn btn-sm btn-primary m-1 float-right'>BORRAR</button>
                             </li> 
                         ))
                     }
@@ -71,10 +92,20 @@ const Usuarios = () => {
                         className='form-control mb-2' type="text" placeholder='Introduce la edad' 
                         value={edad}
                     />
-                    <button 
+                    {
+                        modoedicion ? ( /* Consulta si modoedicion es true
+                                           si lo es imprime el bloque entre () */
+                            <button 
+                        onClick={(e)=>{EdicionFinal(e)}}
+                        className='btn btn-info btn-block' type='submit'
+                    >EDITAR</button>
+                        ) : ( /* Si no lo es imprime el bloque despues de los ":" */
+                            <button 
                         onClick={(e)=>{agergarUsuario(e)}}
                         className='btn btn-info btn-block' type='submit'
                     >AGREGAR</button>
+                        )
+                    }
                 </form>
             </div>
 
