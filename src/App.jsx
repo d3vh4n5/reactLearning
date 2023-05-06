@@ -7,6 +7,11 @@ import Boton from './components/Boton';
 import Listado from './components/Listado';
 import Listados from './components/Listados';
 import Usuarios from './crud_components/Usuarios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Inicio from './components/Inicio';
+import Donde from './components/Donde';
+import Menu from './components/Menu';
+import './css/menu.css'
 
 function App() {
   /*
@@ -59,62 +64,73 @@ function App() {
   },
 ]
 return (
-  <div className='container'>
-  <h1>Test site de React con Yarn, y bootstrap</h1>
-  <br />
-  <hr />
-  <hr />
-  {/*
-  */}
-<h1>Primer componente en React</h1>
-  <Hello></Hello>
-  <Hello></Hello>
-  <Hello></Hello>
-  
-      <hr />
-      <h1>JSX</h1>
-      <Formato></Formato>
+  <Router>
+    <div className='container'>
+    <h1>Test site de React con Yarn, y bootstrap</h1>
+    <br />
+    <hr />
+    <hr />
+    {/*
+    */}
+  <h1>Primer componente en React</h1>
+    <Hello></Hello>
+    <Hello></Hello>
+    <Hello></Hello>
+    
+        <hr />
+        <h1>JSX</h1>
+        <Formato></Formato>
 
-      <hr />
-      <h1>Componentes anidados</h1>
-      <Saludo></Saludo>
+        <hr />
+        <h1>Componentes anidados</h1>
+        <Saludo></Saludo>
 
-      <hr />
-      <h1>Propiedades de los componentes</h1>
-      <Frag saludo='Hola soy una propiedad de saludo' edad='32'></Frag>
-      <Frag saludo='Hola soy otro saludo de otro componente'></Frag>
+        <hr />
+        <h1>Propiedades de los componentes</h1>
+        <Frag saludo='Hola soy una propiedad de saludo' edad='32'></Frag>
+        <Frag saludo='Hola soy otro saludo de otro componente'></Frag>
 
-      <hr />
-      <h1>xxxxx Eventos xxxxx</h1>
-      <Saludo></Saludo>
-      <p>Boton separado del componente funciona igual:</p>
-      <Boton></Boton>
-      <h6><i>ℹ️ -> Los botones imprimen un string en la consola</i></h6>
-      
-      <hr/>
-      <h1>07 EVENTO ONCHANGE</h1>
-      <Listado></Listado>
+        <hr />
+        <h1>xxxxx Eventos xxxxx</h1>
+        <Saludo></Saludo>
+        <p>Boton separado del componente funciona igual:</p>
+        <Boton></Boton>
+        <h6><i>ℹ️ -> Los botones imprimen un string en la consola</i></h6>
+        
+        <hr/>
+        <h1>07 EVENTO ONCHANGE</h1>
+        <Listado></Listado>
 
-      <hr />
-      <h1>08 EN ESTADO O useState en REACT</h1>
+        <hr />
+        <h1>08 EN ESTADO O useState en REACT</h1>
+        <br />
+        <h3>Ejemplo de contador con useState</h3>
+        <p>el valor del dato o contador es: {valor}</p>
+        <p>{texto} </p>
+        <button onClick={aumentar} className='btn btn-success m-2'>Aumentar</button>
+        <button onClick={disminuir} className='btn btn-danger m-2'>Disminuir</button>
+        <hr />
+        <h1>09 LISTAR DATOS CON MAP</h1>
+
+          <Listados datos = {datos}></Listados>
+        <hr />
+      <h1>CRUD BÁSICO</h1>
       <br />
-      <h3>Ejemplo de contador con useState</h3>
-      <p>el valor del dato o contador es: {valor}</p>
-      <p>{texto} </p>
-      <button onClick={aumentar} className='btn btn-success m-2'>Aumentar</button>
-      <button onClick={disminuir} className='btn btn-danger m-2'>Disminuir</button>
-      <hr />
-      <h1>09 LISTAR DATOS CON MAP</h1>
+      <h3>12 Crear formulario y estructura del proyecto</h3>
+      <br />
+        <Usuarios></Usuarios>
 
-        <Listados datos = {datos}></Listados>
+    <h4>⚠️ el mismo solo funciona con la memoria temporal, al refrescar la página se resetea</h4>
       <hr />
-    <h1>CRUD BÁSICO</h1>
-    <br />
-    <h3>12 Crear formulario y estructura del proyecto</h3>
-    <br />
-      <Usuarios></Usuarios>
-      
 
+      <h1>RUTAS EN REACT</h1>
+
+      <Routes>
+        <Route path={'/inicio'} Component={Inicio} ></Route>
+        <Route path={'/donde'} Component={Donde} ></Route>
+      </Routes>
+
+      <Menu></Menu>
 
 
 
@@ -124,9 +140,9 @@ return (
 
       
     
-    <h4>⚠️ el mismo solo funciona con la memoria temporal, al refrescar la página se resetea</h4>
 
     </div>
+  </Router>
   );
 }
 

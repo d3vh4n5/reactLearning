@@ -1,0 +1,29 @@
+.menu{
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu li, .menu a{
+    all: unset;
+}
+ul{
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.menu li{
+    height: fit-content;
+    padding: 5px;
+}
+.menu a:hover{
+    color: tomato;
+    cursor: pointer;
+}
+.menu a.active{
+    color: red;
+    font-weight: bolder;
+}
