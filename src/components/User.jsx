@@ -18,7 +18,7 @@ const User = () => {
     <div>
         <h1>Componete user</h1>
         <p>Estamos dentro del componente user.</p>
-        <p>Este componente esta consumiendo la api <a>'https://jsonplaceholder.typicode.com/users</a>' y listando a los usuarios.</p>
+        <p>Este componente esta consumiendo la api <a href='https://jsonplaceholder.typicode.com/users'>'https://jsonplaceholder.typicode.com/users'</a> y listando a los usuarios.</p>
         <p>También estamos aprendiendo lo que hace el useEffect.</p>
         <ul className='usuarios'>
             {
