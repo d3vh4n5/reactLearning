@@ -8,6 +8,7 @@ const Menu = () => {
         <ul>
             <li><NavLink to={'/inicio'}>Inicio</NavLink></li>
             <li><NavLink to={'/donde'}>Donde</NavLink></li>
+            <li><NavLink to={'/user'}>User</NavLink></li>
         </ul>
     </div>
   )

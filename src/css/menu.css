@@ -27,3 +27,7 @@ ul{
     color: red;
     font-weight: bolder;
 }
+.usuarios{
+    display: flex;
+    flex-direction: column;
+}

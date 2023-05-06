@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Inicio from './components/Inicio';
 import Donde from './components/Donde';
 import Menu from './components/Menu';
-import './css/menu.css'
+import User from './components/User';
 
 function App() {
   /*
@@ -66,7 +66,7 @@ function App() {
 return (
   <Router>
     <div className='container'>
-    <h1>Test site de React con Yarn, y bootstrap</h1>
+    <h1>Test site de React con Yarn, bootstrap y Axios</h1>
     <br />
     <hr />
     <hr />
@@ -125,12 +125,14 @@ return (
 
       <h1>RUTAS EN REACT</h1>
 
+      <Menu></Menu>
+      
       <Routes>
         <Route path={'/inicio'} Component={Inicio} ></Route>
         <Route path={'/donde'} Component={Donde} ></Route>
+        <Route path={'/user'} Component={User} ></Route>
       </Routes>
 
-      <Menu></Menu>
 
 
 
