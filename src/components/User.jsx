@@ -13,7 +13,7 @@ const User = () => {
     useEffect( ()=>{
         //console.log('Renderizado por primera vez');
         ObtenerUsuarios()
-    } )
+    }, [])
 
   return (
     <div>

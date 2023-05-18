@@ -30,7 +30,7 @@ const Apis = () => {
     useEffect( ()=>{
         //console.log('Renderizado por primera vez');
         ObtenerUsuarios()
-    } )
+    }, [])
 
     const obtenerChiste =  async () => {
         //estas dos lineas tienen que ir antes del fetch
