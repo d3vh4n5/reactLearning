@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const User = () => {
 
@@ -23,7 +24,11 @@ const User = () => {
         <ul className='usuarios'>
             {
                 usuarios.map(item=>(
-                    <li key={item.id}>{item.name} -- {item.email}</li>
+                    <li key={item.id}>
+                        <Link to={`/especifico/${item.id}`}>
+                        {item.name} -- {item.email}
+                        </Link>
+                    </li>
                 ))
             }
         </ul>

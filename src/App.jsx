@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import User from './components/User';
 import Ejercicios from './components/Ejercicios';
 import Apis from './components/Apis';
+import Especifico from './components/Especifico';
 
 function App() {
   /*
@@ -26,6 +27,7 @@ return (
         <Route path={'/apis'} Component={Apis} ></Route>
         <Route path={'/user'} Component={User} ></Route>
         <Route path={'/ejercicios'} Component={Ejercicios} ></Route>
+        <Route path={'/especifico/:id'} Component={Especifico} ></Route>
       </Routes>
 
 
