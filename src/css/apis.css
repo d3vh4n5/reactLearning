@@ -1,0 +1,48 @@
+body{
+    background: #e7e7e7;
+}
+.contenedor{
+    border: 1px solid red;
+    background: lightcoral;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    color: black;
+}
+.contenedorDolar{
+    border: 1px solid green;
+    background: lightgreen;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    color: black;
+}
+.respuesta, .respuesta2{
+    background-color: rgb(240, 222, 222);
+    border-radius: 10px;
+    padding: 10px;
+}
+button{
+    margin: 0 auto;
+}
+.tst{
+    color: rgb(2, 51, 2);
+}
+.buscando::after{
+    content: '';
+    animation: look 2s ease infinite;
+}
+@keyframes look {
+    0%{
+        content: '';
+    }
+    25%{
+        content: '.';
+    }
+    50%{
+        content: '..';
+    }
+    75%{
+        content: '...';
+    }
+}

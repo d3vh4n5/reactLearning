@@ -5,6 +5,7 @@ import Donde from './components/Donde';
 import Menu from './components/Menu';
 import User from './components/User';
 import Ejercicios from './components/Ejercicios';
+import Apis from './components/Apis';
 
 function App() {
   /*
@@ -22,6 +23,7 @@ return (
       <Routes>
         <Route path={'/inicio'} Component={Inicio} ></Route>
         <Route path={'/donde'} Component={Donde} ></Route>
+        <Route path={'/apis'} Component={Apis} ></Route>
         <Route path={'/user'} Component={User} ></Route>
         <Route path={'/ejercicios'} Component={Ejercicios} ></Route>
       </Routes>
