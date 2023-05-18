@@ -12,7 +12,7 @@ const Especifico = () => {
 
     useEffect(()=>{
       obtenerUsuario()
-    }, [])
+    })
 
   return (
     <div>Especifico
