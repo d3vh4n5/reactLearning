@@ -31,3 +31,7 @@ ul{
     display: flex;
     flex-direction: column;
 }
+.listaInicio{
+    display: flex;
+    flex-direction: column;
+}
