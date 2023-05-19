@@ -20,7 +20,8 @@ const User = () => {
         <h1>Componete user</h1>
         <p>Estamos dentro del componente user.</p>
         <p>Este componente esta consumiendo la api <a href='https://jsonplaceholder.typicode.com/users'>'https://jsonplaceholder.typicode.com/users'</a> y listando a los usuarios.</p>
-        <p>También estamos aprendiendo lo que hace el useEffect.</p>
+        <p>También aprendiendo lo que hace el useEffect.</p>
+        <p>Ahora este componente fue modificado para aprender el enrutamiento con parámetros</p>
         <ul className='usuarios'>
             {
                 usuarios.map(item=>(
