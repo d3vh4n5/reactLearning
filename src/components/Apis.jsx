@@ -4,32 +4,22 @@ import '../css/apis.css'
 
 const Apis = () => {
 
-    function listarMiApi(){
-        let lista = document.getElementById('lista-objetos')
-        lista.innerHTML = "<p class='buscando'>Buscando</p>"
-        fetch('https://mercadolan.000webhostapp.com/API/app.php?opcion=1')
-        .then(response => response.json()) // Convertir la respuesta a JSON
-        .then(data => {
-            //console.log(data);
-            lista.innerHTML = ''
-            for (let objeto of data){
-                const li = document.createElement('p');
-                li.className += 'contenedorDolar'
-                li.textContent = `Nombre: ${objeto.nombre} | Edad:  ${objeto.edad} Años | Es humano: ${objeto.humano}`;
-                lista.appendChild(li);
-            }
-        })
-    }
-
     const [usuarios, setUsuarios] = useState([])
+    const [productos, setProductos] = useState([])
 
     const ObtenerUsuarios = async ()=>{
         const data = await axios.get('https://jsonplaceholder.typicode.com/users')
         setUsuarios(data.data)
     }
+    const ObtenerProductos = async ()=>{
+        const data = await axios.get('https://mercadolan.000webhostapp.com/API/app.php?opcion=1')
+        setProductos(data.data)
+    }
+
     useEffect( ()=>{
         //console.log('Renderizado por primera vez');
         ObtenerUsuarios()
+        ObtenerProductos()
     }, [])
 
     const obtenerChiste =  async () => {
@@ -102,11 +92,29 @@ const Apis = () => {
                 }
             </ul>
         </div>
-
-        <h1>Listando los objetos de mi propia api hecha en PHP</h1>
-        <div id="lista-objetos"></div>
-        <button onClick={listarMiApi}>Listar</button>
-
+         <hr />
+        <h1>Listado automático:</h1>
+        <h5><b><i>
+            El siguiente listado de tarjetas viene de una miniAPI propia desarrollada 
+            en PHP,
+            la cual está listando los mismos productos que están en mi proyecto de 
+            <a href="https://mercadolan.000webhostapp.com/index.php"> Mercado Lan</a>
+            </i></b>
+        </h5>
+        <br />
+        <div className="contenedorTarjetas">
+            {
+                productos.map(item=>(
+                    <div className="tarjetaProducto">
+                        <p><b>Producto: </b>{item.nombre_producto}</p>
+                        <img src={'https://mercadolan.000webhostapp.com/assets/img/productos/' + item.imagen} alt="Imagen del producto" />
+                        <p><b>Precio: $</b> {item.precio}</p>
+                        <p><b>Descripción:</b> {item.descripcion}</p>
+                    </div>
+                ))
+            }
+        </div>
+        <hr />
         <h1>Api de chistees de chuck norris</h1>
 
         <div class="contenedor" id="contenedor">
