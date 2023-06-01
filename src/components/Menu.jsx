@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <div className='menu'>
         <ul>
-            <li><NavLink to={'/inicio'}>Inicio</NavLink></li>
+            <li><NavLink to={'/'}>Inicio</NavLink></li>
             <li><NavLink to={'/donde'}>Donde</NavLink></li>
             <li><NavLink to={'/apis'}>Apis</NavLink></li>
             <li><NavLink to={'/user'}>User</NavLink></li>

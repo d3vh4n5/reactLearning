@@ -22,7 +22,7 @@ return (
       <Menu></Menu>
       
       <Routes>
-        <Route path={'/inicio'} Component={Inicio} ></Route>
+        <Route path={'/'} Component={Inicio} ></Route>
         <Route path={'/donde'} Component={Donde} ></Route>
         <Route path={'/apis'} Component={Apis} ></Route>
         <Route path={'/user'} Component={User} ></Route>
